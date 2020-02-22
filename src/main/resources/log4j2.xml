@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Appenders>
+	<Console name="ConsoleJSONAppender" target="SYSTEM_OUT">
+		<JsonLayout compact="true" eventEol="true" complete="false" properties="true" locationInfo="false" stacktraceAsString="true">
+			<KeyValuePair key="timestamp" value="$${date:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}" />
+		</JsonLayout>
+        </Console>
+
+    </Appenders>
+    <Loggers>
+
+	<Logger name="com.swift.mmsapp" level="TRACE" additivity="false">
+    		<AppenderRef ref="ConsoleJSONAppender" />
+	</Logger>
+ 
+        <Root level="info">
+            <AppenderRef ref="ConsoleJSONAppender" />
+        </Root>
+    </Loggers>
+</Configuration>
+
+ 
